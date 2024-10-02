@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Image Editor</title>
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+    <div class="editor-container">
+        <div class="image-container">
+            <canvas id="baseCanvas"></canvas>
+            <canvas id="imageCanvas"></canvas>
+        </div>
+        <div class="file"><input type="file" id="fileInput" accept="image/*"></div>
+        
+        <div class="buttons">
+            <button onclick="moveImage('up')">Move Up</button>
+            <button onclick="moveImage('down')">Move Down</button>
+            <button onclick="moveImage('left')">Move Left</button>
+            <button onclick="moveImage('right')">Move Right</button>
+            <button onclick="zoomImage('in')">Zoom In</button>
+            <button onclick="zoomImage('out')">Zoom Out</button>
+            <button onclick="rotateImage('clockwise')">Rotate Clockwise</button>
+            <button onclick="rotateImage('anticlockwise')">Rotate Anticlockwise</button>
+            <button onclick="flipImage('horizontal')">Flip Horizontal</button>
+            <button onclick="flipImage('vertical')">Flip Vertical</button>
+        </div>
+        <div class="text-inputs">
+            <label for="name">Name: </label><input type="text" id="name"><br>
+            <label for="standard">Std: </label><input type="text" id="standard"><br>
+            <label for="section">Sec: </label><input type="text" id="section"><br>
+            <label for="subject">Subject: </label><input type="text" id="subject"><br>
+            <label for="school">School: </label><input type="text" id="school">
+        </div>
+        <button class="final" onclick="generateFinalImage()">Generate Image</button>
+        
+        <!-- Output Container for Generated Image and Text -->
+        <div id="outputContainer" class="grid-container" style="display: none;">
+            <div id="generatedImage"></div>
+            <div class="text-details">
+                <p id="nameText"></p>
+                <p id="standardText"></p>
+                <p id="sectionText"></p>
+                <p id="subjectText"></p>
+                <p id="schoolText"></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
